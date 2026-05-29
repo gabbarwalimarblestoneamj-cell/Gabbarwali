@@ -1,0 +1,155 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN (Media Queries)
+   ========================================================================== */
+
+/* Max 1024px (Tablets Landscape & Small Desktops) */
+@media (max-width: 1024px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .home-hero-img {
+    height: 50vh;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-strip-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+  .project-strip-item.large {
+    grid-column: 1 / 3;
+    grid-row: auto;
+    height: 400px;
+  }
+  
+  .split-section {
+    grid-template-columns: 1fr;
+  }
+  .split-img {
+    min-height: 400px;
+  }
+  
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+/* Max 768px (Tablets Portrait) */
+@media (max-width: 768px) {
+  :root {
+    --spacing-xl: 4rem;
+    --spacing-lg: 3rem;
+  }
+  
+  /* Navigation */
+  .nav-menu, .nav-actions {
+    display: none; /* Mobile menu active */
+  }
+  .mobile-toggle {
+    display: block;
+  }
+
+  /* Full screen mobile menu (to be toggled via JS) */
+  .mobile-menu-active .nav-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100vh;
+    background-color: var(--color-bg-dark);
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    z-index: 999;
+  }
+  .mobile-menu-active .nav-actions {
+    display: flex;
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trust-grid {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .trust-item {
+    flex: 0 0 45%;
+  }
+  .trust-item::after {
+    display: none;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .vastu-pills {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+/* Max 480px (Mobile Phones) */
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .process-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .project-strip-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-strip-item.large {
+    grid-column: auto;
+    height: 300px;
+  }
+  .project-strip-item {
+    height: 250px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-item {
+    flex: 0 0 100%;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+  
+  .home-hero-btns {
+    flex-direction: column;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+  }
+  .logo-icon {
+    width: 55px;
+    height: 55px;
+  }
+
+  .masonry-grid {
+    column-count: 1;
+  }
+}
