@@ -14,10 +14,12 @@
   
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
   .process-timeline {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
   .project-strip-grid {
@@ -32,29 +34,42 @@
   
   .split-section {
     grid-template-columns: 1fr;
+    gap: 3rem;
   }
   .split-img {
     min-height: 400px;
+    margin-top: 2rem;
   }
   
   .masonry-grid {
     column-count: 2;
+    column-gap: 1.5rem;
+  }
+  .masonry-item {
+    margin-bottom: 1.5rem;
   }
 }
 
-/* Max 768px (Tablets Portrait) */
+/* Max 768px (Tablets Portrait & Large Phones) */
 @media (max-width: 768px) {
   :root {
-    --spacing-xl: 4rem;
-    --spacing-lg: 3rem;
+    --spacing-xl: 3rem;
+    --spacing-lg: 2rem;
+    --spacing-md: 1.5rem;
   }
   
+  .section {
+    padding: 3rem 0; /* Reduce padding on mobile */
+  }
+
   /* Navigation */
   .nav-menu, .nav-actions {
     display: none; /* Mobile menu active */
   }
   .mobile-toggle {
     display: block;
+    font-size: 1.5rem;
+    color: var(--color-white);
   }
 
   /* Full screen mobile menu (to be toggled via JS) */
@@ -80,6 +95,7 @@
 
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
   .trust-grid {
@@ -95,6 +111,7 @@
 
   .testimonials-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
   
   .vastu-pills {
@@ -102,10 +119,33 @@
     align-items: center;
     gap: 1rem;
   }
+
+  /* Logo text adjustments so it fits */
+  .logo-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .logo-text {
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+  }
+  .logo-subtext {
+    font-size: 0.55rem;
+    letter-spacing: 6px;
+    margin-right: -6px;
+  }
 }
 
 /* Max 480px (Mobile Phones) */
 @media (max-width: 480px) {
+  .section {
+    padding: 2.5rem 0; /* Tighten up on phones */
+  }
+
+  .home-hero-content {
+    padding: 2rem 1rem;
+  }
+
   .services-grid {
     grid-template-columns: 1fr;
   }
@@ -119,7 +159,7 @@
   }
   .project-strip-item.large {
     grid-column: auto;
-    height: 300px;
+    height: 250px;
   }
   .project-strip-item {
     height: 250px;
@@ -127,6 +167,7 @@
 
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .trust-item {
@@ -135,21 +176,53 @@
 
   .cta-buttons {
     flex-direction: column;
+    gap: 1rem;
   }
   
   .home-hero-btns {
     flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+  .home-hero-btns .btn {
+    width: 100%;
+    text-align: center;
   }
 
+  .logo-icon {
+    width: 50px;
+    height: 50px;
+  }
   .logo-text {
     font-size: 1rem;
+    letter-spacing: 1px;
   }
-  .logo-icon {
-    width: 55px;
-    height: 55px;
+  .logo-subtext {
+    font-size: 0.5rem;
+    letter-spacing: 4px;
+    margin-right: -4px;
   }
 
+  /* Optimize images and grids for mobile */
   .masonry-grid {
-    column-count: 1;
+    column-count: 1; /* Beautiful full-width images on mobile */
+    column-gap: 0;
+  }
+  .masonry-item {
+    margin-bottom: 1rem;
+  }
+  .masonry-item img {
+    border-radius: 8px; /* Softer edges on mobile images */
+  }
+
+  .whatsapp-form {
+    padding: 1.5rem !important; /* Decrease form padding on small screens */
+  }
+
+  /* Form adjustments */
+  input, select, textarea {
+    font-size: 16px !important; /* Prevents iOS auto-zoom */
   }
 }
+
+.whatsapp-fab { display: flex !important; bottom: 30px !important; right: 20px !important; z-index: 99999 !important; }

@@ -140,4 +140,35 @@ document.addEventListener('DOMContentLoaded', () => {
       window.open(whatsappUrl, '_blank');
     });
   });
+
+  // LIGHTBOX LOGIC
+  const lightbox = document.createElement('div');
+  lightbox.className = 'lightbox';
+  lightbox.innerHTML = `
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-img" src="" alt="Lightbox Image">
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = lightbox.querySelector('.lightbox-img');
+  const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.masonry-item img, .gallery-item img').forEach(img => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', (e) => {
+      lightboxImg.src = e.target.src.replace('/q_auto,f_auto,w_500/', '/q_auto,f_auto/'); // fetch full res if needed
+      lightbox.classList.add('active');
+    });
+  });
+
+  lightboxClose.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target !== lightboxImg) {
+      lightbox.classList.remove('active');
+    }
+  });
+
 });

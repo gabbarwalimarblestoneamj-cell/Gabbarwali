@@ -1039,3 +1039,12 @@ h1, h2, h3, h4, h5, h6 {
   gap: 1rem;
   margin-bottom: 2rem;
 }
+
+.masonry-grid { column-count: 3; column-gap: 2rem; }
+.masonry-item { break-inside: avoid; margin-bottom: 2rem; overflow: hidden; border-radius: 8px; position: relative; cursor: pointer; transition: transform 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.masonry-item:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+.masonry-item img { width: 100%; display: block; border-radius: 8px; }
+.lightbox { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease; }
+.lightbox.active { display: flex; opacity: 1; }
+.lightbox-img { max-width: 95vw; max-height: 95vh; object-fit: contain; border-radius: 4px; }
+.lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 3rem; cursor: pointer; z-index: 10000; line-height: 1; }
