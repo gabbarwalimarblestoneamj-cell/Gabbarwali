@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "dev": "npx live-server"
+  },
   "dependencies": {
     "puppeteer": "^25.1.0"
   }
